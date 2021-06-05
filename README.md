@@ -1,5 +1,7 @@
 # airtechchallenge2021
 
+Use Spring Boot 
+
 ## To execute after performing "mvn package"
  java -jar target/AIRTechChallenge-0.0.1-SNAPSHOT.jar --api.key=$ATM_API_KEY 
  
