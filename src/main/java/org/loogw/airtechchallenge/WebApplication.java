@@ -42,12 +42,20 @@ public class WebApplication {
    }
 
    @RequestMapping(value="/airports")
-   public String getAirports() {
+   public String getAirports() throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
 	HttpHeaders headers = new HttpHeaders();
 	headers.set("api-key",apiKey);
         HttpEntity <String> entity = new HttpEntity<String>(headers);
-        return restTemplate.exchange("https://open-atms.airlab.aero/api/v1/airac/airports",HttpMethod.GET, entity, String.class).getBody();
-
+        String response= restTemplate.exchange("https://open-atms.airlab.aero/api/v1/airac/airports",HttpMethod.GET, entity, String.class).getBody();
+        List<Map<String, Object>> airports = objectMapper.readValue(response,new TypeReference<List<Map<String, Object>>>(){});
+        for (int i=0; i< airports.size(); i++) {
+             System.out.println("["+ String.valueOf(i+1) + "]");
+             for(Map.Entry<String,Object>it:airports.get(i).entrySet())
+                  System.out.println(it.getKey() + "=" + String.valueOf(it.getValue()));
+             System.out.println();
+        }
+	return response;
    }
 
    @RequestMapping(value = "/sids/airport/{icao}")
@@ -78,10 +86,10 @@ public class WebApplication {
       headers.set("api-key",apiKey);
       HttpEntity<String> entity = new HttpEntity<String>(headers);
       String response=restTemplate.exchange("https://open-atms.airlab.aero/api/v1/airac/stars/airport/"+id,HttpMethod.GET, entity, String.class).getBody();
-      List<Map<String, Object>> sids = objectMapper.readValue(response,new TypeReference<List<Map<String, Object>>>(){});
-      for (int i=0; i< sids.size(); i++) {
+      List<Map<String, Object>> stars = objectMapper.readValue(response,new TypeReference<List<Map<String, Object>>>(){});
+      for (int i=0; i< stars.size(); i++) {
              System.out.println("["+ String.valueOf(i+1) + "]");
-             for(Map.Entry<String,Object>it:sids.get(i).entrySet())
+             for(Map.Entry<String,Object>it:stars.get(i).entrySet())
                   System.out.println(it.getKey() +"=" + it.getValue() + " Type=" + it.getValue().getClass().getName());
              System.out.println();
       }
