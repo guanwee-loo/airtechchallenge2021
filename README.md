@@ -20,3 +20,6 @@ HTTP GET http://localhost:8080/stars/airport/{icao}
 
 ## Retrieval top N waypoints of all SIDS in airport
 HTTP GET http://localhost:8080/sids/airport/{icao}/topWaypoints/{N}
+
+## Retrieval top N waypoints of all STARS in airport
+HTTP GET http://localhost:8080/stars/airport/{icao}/topWaypoints/{N}

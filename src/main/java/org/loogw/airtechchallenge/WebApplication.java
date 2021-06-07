@@ -79,42 +79,31 @@ public class WebApplication {
    }
 
    @RequestMapping(value = "/sids/airport/{icao}/topWaypoints/{n}")
-   public String getTopNSIDWaypointsForAirport(@PathVariable("icao") String id, @PathVariable("n") int N) {
+   public String getTopNSIDWaypointsForAirport(@PathVariable("icao") String id, @PathVariable("n") int n) {
 	String resp= getSIDsForAirport(id);
-	jsonToObject(resp);
-	return "Requesting top " +  String.valueOf(N) + " SID waypoints for icao " + id; 
+	return generateResults(id,resp,n);
    }
 
    @RequestMapping(value = "/stars/airport/{icao}/topWaypoints/{n}")
-   public String getTopNSTARWaypointsForAirport(@PathVariable("icao") String id, @PathVariable("n") int N) {
+   public String getTopNSTARWaypointsForAirport(@PathVariable("icao") String id, @PathVariable("n") int n) {
  	String resp = getSTARSForAirport(id);
-	jsonToObject(resp);
-        return "Requesting top " +  String.valueOf(N) + " STAR waypoints for icao " + id;
+	return generateResults(id,resp,n);
    }
 
-   //"Brute force" way to count the number of waypoints in each SID for an airport
-   // Extract waypoints 
-   // Insert into HashMap using uid as key, initiate count to 1
-   //
-   private String generateResults (String icao,String req) {
-	HashMap map=new HashMap();
-
-	jsonToObject(req);	
-	return new String();
-   }
 
    //Perform JSON string to object deserialization
    //"Brute force" way to count the number of waypoints in each SID for an airport
    // Extract waypoints data and insert its name into a HashMap using UID as key 
    //    If key is available in map, increment count else add key and initiate to 1 
-   private List<Map<String, Object>> jsonToObject(String jsonString) {
+   private String generateResults(String icao,String jsonString, int n) {
 	ObjectMapper objectMapper = new ObjectMapper();
+	String json="{}";
 	List<Map<String, Object>> objs =null;
 	try {
 		objs = objectMapper.readValue(jsonString,new TypeReference<List<Map<String, Object>>>(){});
 		HashMap hm = new HashMap();
       		for (int i=0; i< objs.size(); i++) {
-             		System.out.println("["+ String.valueOf(i+1) + "]");
+             		//System.out.println("["+ String.valueOf(i+1) + "]");
              		for(Map.Entry<String,Object>it:objs.get(i).entrySet())
 				if (it.getKey() == "waypoints") {
 			 		ArrayList a= (ArrayList) it.getValue();
@@ -137,17 +126,27 @@ public class WebApplication {
 					}		
 				}
       		}
-		hm=sortByCount(hm);
-		hm.forEach((key, value) -> System.out.println(key + ":" + value));	
+		hm=sortByCount(hm,n);
+		ArrayList<HashMap> a=new ArrayList<HashMap>();
+		hm.forEach((key, value) -> {
+			//System.out.println(key + ":" + value);
+			HashMap hm3= new HashMap();
+			hm3.put("name",key);
+			hm3.put("count",value);
+			a.add(hm3);
+			
+		});
+		json=objectMapper.writeValueAsString(new Result(icao,a));
+		System.out.println(json);
 	} catch (Exception e) {
 		System.out.println(e);
 	}	
-        return objs;
+        return json;
    }
 
-    private HashMap<String, Integer> sortByCount(HashMap<String, Integer> hm)
+    //Sort counts in descending order and return first n items.
+    private HashMap<String, Integer> sortByCount(HashMap<String, Integer> hm, int n)
     {
-
         List<Map.Entry<String, Integer> > list =
                new LinkedList<Map.Entry<String, Integer> >(hm.entrySet());
 
@@ -158,18 +157,34 @@ public class WebApplication {
                 return (o2.getValue()).compareTo(o1.getValue());
             }
         });
-         
-  
+     	int c=0;    
         HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
         for (Map.Entry<String, Integer> aa : list) {
             temp.put(aa.getKey(), aa.getValue());
+	    c++;
+	    if (c==n) 
+		break;
         }
         return temp;
     }
 
-   //Build a HashMap of waypoints with name as key and value as counts (shared by all SIDS in the airport) 
-   private HashMap getResults() {
-	return new HashMap();
-   }  
+    //inner class to represent result	
+    private class Result {
+
+	private String airport;
+	private ArrayList<HashMap> topWayPoints;
+	
+	public Result(String airport, ArrayList<HashMap> topWayPoints ) {
+		this.airport=airport;
+		this.topWayPoints= topWayPoints;
+	}
+        public ArrayList<HashMap> getTopWayPoints() {
+		return topWayPoints;
+	}
+	public String getAirport() {
+		return airport;
+	}	
+	
+    } 
 
 }
