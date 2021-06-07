@@ -21,5 +21,10 @@ HTTP GET http://localhost:8080/stars/airport/{icao}
 ## Retrieval top N waypoints of all SIDS in airport
 HTTP GET http://localhost:8080/sids/airport/{icao}/topWaypoints/{N}
 
+<img width="534" alt="topwp_sids" src="https://user-images.githubusercontent.com/6189477/121049476-4ba03f80-c7ea-11eb-8d12-c7327c57cc04.PNG">
+
 ## Retrieval top N waypoints of all STARS in airport
 HTTP GET http://localhost:8080/stars/airport/{icao}/topWaypoints/{N}
+
+<img width="511" alt="topwp_stars" src="https://user-images.githubusercontent.com/6189477/121049504-52c74d80-c7ea-11eb-810a-d6a03ce9b1aa.PNG">
+
