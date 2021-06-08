@@ -28,3 +28,11 @@ HTTP GET http://localhost:8080/stars/airport/{icao}/topWaypoints/{N}
 
 <img width="511" alt="topwp_stars" src="https://user-images.githubusercontent.com/6189477/121049504-52c74d80-c7ea-11eb-810a-d6a03ce9b1aa.PNG">
 
+## Building the Docker image and pushing to Docker Hub
+docker build -t loogw/airtechchallenge2021:0.0.1-SNAPSHOT .
+docker push loogw/airtechchallenge2021:0.0.1-SNAPSHOT
+
+## Running the container
+docker run -e ATM_API_KEY=$ATM_API_KEY -p 8080:8080 loogw/airtechchallenge2021:0.0.1-SNAPSHOT
+
+Replace $ATM_API_KEY with your API token or set it in the environment variable
