@@ -32,6 +32,8 @@ HTTP GET http://localhost:8080/stars/airport/{icao}/topWaypoints/{N}
 docker build -t loogw/airtechchallenge2021:0.0.1-SNAPSHOT .
 
 docker push loogw/airtechchallenge2021:0.0.1-SNAPSHOT
+<img width="960" alt="h" src="https://user-images.githubusercontent.com/6189477/121223470-24b13e80-c8ba-11eb-9a4c-840ba04134fc.PNG">
+
 
 ## Running the container
 docker run -e ATM_API_KEY=$ATM_API_KEY -p 8080:8080 loogw/airtechchallenge2021:0.0.1-SNAPSHOT
