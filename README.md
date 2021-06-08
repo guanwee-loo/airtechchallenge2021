@@ -30,6 +30,7 @@ HTTP GET http://localhost:8080/stars/airport/{icao}/topWaypoints/{N}
 
 ## Building the Docker image and pushing to Docker Hub
 docker build -t loogw/airtechchallenge2021:0.0.1-SNAPSHOT .
+
 docker push loogw/airtechchallenge2021:0.0.1-SNAPSHOT
 
 ## Running the container
