@@ -1,0 +1,10 @@
+Use the python3 scripts to generate the Neo4j Cypher scripts to import the
+
+usage:
+
+# This uses the star.json file to generate the corresponding Cypher script into star.txt
+python3 StarCypher.py > star.txt
+
+# This uses the sid.json file to generate the corresponding Cypher script into sid.txt
+python3 SidCyper.py > sid.txt
+ 

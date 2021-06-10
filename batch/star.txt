@@ -1,0 +1,427 @@
+
+
+
+
+merge (a0:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp00: Waypoint { name : "BOG1", uid : "BOG1" } ) 
+merge (a0) <- [:HAS_ROUTE_FROM {SID : "ARA1A"} ] - (wp00)
+ 
+merge (wp10: Waypoint { name : "BOBAG", uid : "BOBAG" })
+merge (wp00) <- [:HAS_ROUTE_FROM {SID : "ARA1A"} ] - (wp10)
+
+ 
+merge (wp20: Waypoint { name : "BOKIP", uid : "BOKIP" })
+merge (wp10) <- [:HAS_ROUTE_FROM {SID : "ARA1A"} ] - (wp20)
+
+ 
+merge (wp30: Waypoint { name : "SAMKO", uid : "SAMKO" })
+merge (wp20) <- [:HAS_ROUTE_FROM {SID : "ARA1A"} ] - (wp30)
+
+
+
+
+merge (a1:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp01: Waypoint { name : "BOG1", uid : "BOG1" } ) 
+merge (a1) <- [:HAS_ROUTE_FROM {SID : "ARA1B"} ] - (wp01)
+ 
+merge (wp11: Waypoint { name : "BOBAG", uid : "BOBAG" })
+merge (wp01) <- [:HAS_ROUTE_FROM {SID : "ARA1B"} ] - (wp11)
+
+ 
+merge (wp21: Waypoint { name : "SAMKO", uid : "SAMKO" })
+merge (wp11) <- [:HAS_ROUTE_FROM {SID : "ARA1B"} ] - (wp21)
+
+ 
+merge (wp31: Waypoint { name : "BTM", uid : "BTM" })
+merge (wp21) <- [:HAS_ROUTE_FROM {SID : "ARA1B"} ] - (wp31)
+
+ 
+merge (wp41: Waypoint { name : "DOVAN", uid : "DOVAN" })
+merge (wp31) <- [:HAS_ROUTE_FROM {SID : "ARA1B"} ] - (wp41)
+
+ 
+merge (wp51: Waypoint { name : "BIPOP", uid : "BIPOP" })
+merge (wp41) <- [:HAS_ROUTE_FROM {SID : "ARA1B"} ] - (wp51)
+
+
+
+
+merge (a2:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp02: Waypoint { name : "BOG2", uid : "BOG2" } ) 
+merge (a2) <- [:HAS_ROUTE_FROM {SID : "ASU1A"} ] - (wp02)
+ 
+merge (wp12: Waypoint { name : "BOBAG", uid : "BOBAG" })
+merge (wp02) <- [:HAS_ROUTE_FROM {SID : "ASU1A"} ] - (wp12)
+
+ 
+merge (wp22: Waypoint { name : "BOKIP", uid : "BOKIP" })
+merge (wp12) <- [:HAS_ROUTE_FROM {SID : "ASU1A"} ] - (wp22)
+
+ 
+merge (wp32: Waypoint { name : "SAMKO", uid : "SAMKO" })
+merge (wp22) <- [:HAS_ROUTE_FROM {SID : "ASU1A"} ] - (wp32)
+
+
+
+
+merge (a3:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp03: Waypoint { name : "BOG2", uid : "BOG2" } ) 
+merge (a3) <- [:HAS_ROUTE_FROM {SID : "ASU1B"} ] - (wp03)
+ 
+merge (wp13: Waypoint { name : "BOBAG", uid : "BOBAG" })
+merge (wp03) <- [:HAS_ROUTE_FROM {SID : "ASU1B"} ] - (wp13)
+
+ 
+merge (wp23: Waypoint { name : "SAMKO", uid : "SAMKO" })
+merge (wp13) <- [:HAS_ROUTE_FROM {SID : "ASU1B"} ] - (wp23)
+
+ 
+merge (wp33: Waypoint { name : "BTM", uid : "BTM" })
+merge (wp23) <- [:HAS_ROUTE_FROM {SID : "ASU1B"} ] - (wp33)
+
+ 
+merge (wp43: Waypoint { name : "DOVAN", uid : "DOVAN" })
+merge (wp33) <- [:HAS_ROUTE_FROM {SID : "ASU1B"} ] - (wp43)
+
+ 
+merge (wp53: Waypoint { name : "BIPOP", uid : "BIPOP" })
+merge (wp43) <- [:HAS_ROUTE_FROM {SID : "ASU1B"} ] - (wp53)
+
+
+
+
+merge (a4:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp04: Waypoint { name : "PAS1", uid : "PAS1" } ) 
+merge (a4) <- [:HAS_ROUTE_FROM {SID : "BEL1A"} ] - (wp04)
+ 
+merge (wp14: Waypoint { name : "PASPU", uid : "PASPU" })
+merge (wp04) <- [:HAS_ROUTE_FROM {SID : "BEL1A"} ] - (wp14)
+
+ 
+merge (wp24: Waypoint { name : "NYLON", uid : "NYLON" })
+merge (wp14) <- [:HAS_ROUTE_FROM {SID : "BEL1A"} ] - (wp24)
+
+ 
+merge (wp34: Waypoint { name : "POSUB", uid : "POSUB" })
+merge (wp24) <- [:HAS_ROUTE_FROM {SID : "BEL1A"} ] - (wp34)
+
+ 
+merge (wp44: Waypoint { name : "SANAT", uid : "SANAT" })
+merge (wp34) <- [:HAS_ROUTE_FROM {SID : "BEL1A"} ] - (wp44)
+
+
+
+
+merge (a5:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp05: Waypoint { name : "PAS1", uid : "PAS1" } ) 
+merge (a5) <- [:HAS_ROUTE_FROM {SID : "BEL1B"} ] - (wp05)
+ 
+merge (wp15: Waypoint { name : "PASPU", uid : "PASPU" })
+merge (wp05) <- [:HAS_ROUTE_FROM {SID : "BEL1B"} ] - (wp15)
+
+ 
+merge (wp25: Waypoint { name : "NYLON", uid : "NYLON" })
+merge (wp15) <- [:HAS_ROUTE_FROM {SID : "BEL1B"} ] - (wp25)
+
+
+
+
+merge (a6:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp06: Waypoint { name : "LAV3", uid : "LAV3" } ) 
+merge (a6) <- [:HAS_ROUTE_FROM {SID : "KAR1A"} ] - (wp06)
+ 
+merge (wp16: Waypoint { name : "LAVAX", uid : "LAVAX" })
+merge (wp06) <- [:HAS_ROUTE_FROM {SID : "KAR1A"} ] - (wp16)
+
+ 
+merge (wp26: Waypoint { name : "IGNON", uid : "IGNON" })
+merge (wp16) <- [:HAS_ROUTE_FROM {SID : "KAR1A"} ] - (wp26)
+
+ 
+merge (wp36: Waypoint { name : "SANAT", uid : "SANAT" })
+merge (wp26) <- [:HAS_ROUTE_FROM {SID : "KAR1A"} ] - (wp36)
+
+
+
+
+merge (a7:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp07: Waypoint { name : "LAV3", uid : "LAV3" } ) 
+merge (a7) <- [:HAS_ROUTE_FROM {SID : "KAR1B"} ] - (wp07)
+ 
+merge (wp17: Waypoint { name : "LAVAX", uid : "LAVAX" })
+merge (wp07) <- [:HAS_ROUTE_FROM {SID : "KAR1B"} ] - (wp17)
+
+ 
+merge (wp27: Waypoint { name : "RUVIK", uid : "RUVIK" })
+merge (wp17) <- [:HAS_ROUTE_FROM {SID : "KAR1B"} ] - (wp27)
+
+ 
+merge (wp37: Waypoint { name : "DOVAN", uid : "DOVAN" })
+merge (wp27) <- [:HAS_ROUTE_FROM {SID : "KAR1B"} ] - (wp37)
+
+ 
+merge (wp47: Waypoint { name : "BIPOP", uid : "BIPOP" })
+merge (wp37) <- [:HAS_ROUTE_FROM {SID : "KAR1B"} ] - (wp47)
+
+
+
+
+merge (a8:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp08: Waypoint { name : "PU1", uid : "PU1" } ) 
+merge (a8) <- [:HAS_ROUTE_FROM {SID : "LBR2A"} ] - (wp08)
+ 
+merge (wp18: Waypoint { name : "SJ1", uid : "SJ1" })
+merge (wp08) <- [:HAS_ROUTE_FROM {SID : "LBR2A"} ] - (wp18)
+
+ 
+merge (wp28: Waypoint { name : "PALGA", uid : "PALGA" })
+merge (wp18) <- [:HAS_ROUTE_FROM {SID : "LBR2A"} ] - (wp28)
+
+ 
+merge (wp38: Waypoint { name : "PAMSI", uid : "PAMSI" })
+merge (wp28) <- [:HAS_ROUTE_FROM {SID : "LBR2A"} ] - (wp38)
+
+ 
+merge (wp48: Waypoint { name : "SAMKO", uid : "SAMKO" })
+merge (wp38) <- [:HAS_ROUTE_FROM {SID : "LBR2A"} ] - (wp48)
+
+
+
+
+merge (a9:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp09: Waypoint { name : "SJ1", uid : "SJ1" } ) 
+merge (a9) <- [:HAS_ROUTE_FROM {SID : "LBR2B"} ] - (wp09)
+ 
+merge (wp19: Waypoint { name : "PU1", uid : "PU1" })
+merge (wp09) <- [:HAS_ROUTE_FROM {SID : "LBR2B"} ] - (wp19)
+
+ 
+merge (wp29: Waypoint { name : "BETBA", uid : "BETBA" })
+merge (wp19) <- [:HAS_ROUTE_FROM {SID : "LBR2B"} ] - (wp29)
+
+ 
+merge (wp39: Waypoint { name : "BIDUS", uid : "BIDUS" })
+merge (wp29) <- [:HAS_ROUTE_FROM {SID : "LBR2B"} ] - (wp39)
+
+
+
+
+merge (a10:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp010: Waypoint { name : "LELIB", uid : "LELIB" } ) 
+merge (a10) <- [:HAS_ROUTE_FROM {SID : "LEL3B"} ] - (wp010)
+ 
+merge (wp110: Waypoint { name : "JB", uid : "JB" })
+merge (wp010) <- [:HAS_ROUTE_FROM {SID : "LEL3B"} ] - (wp110)
+
+ 
+merge (wp210: Waypoint { name : "ALFA", uid : "ALFA" })
+merge (wp110) <- [:HAS_ROUTE_FROM {SID : "LEL3B"} ] - (wp210)
+
+ 
+merge (wp310: Waypoint { name : "BIDUS", uid : "BIDUS" })
+merge (wp210) <- [:HAS_ROUTE_FROM {SID : "LEL3B"} ] - (wp310)
+
+
+
+
+merge (a11:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp011: Waypoint { name : "PAS3", uid : "PAS3" } ) 
+merge (a11) <- [:HAS_ROUTE_FROM {SID : "MAB2A"} ] - (wp011)
+ 
+merge (wp111: Waypoint { name : "PASPU", uid : "PASPU" })
+merge (wp011) <- [:HAS_ROUTE_FROM {SID : "MAB2A"} ] - (wp111)
+
+ 
+merge (wp211: Waypoint { name : "NYLON", uid : "NYLON" })
+merge (wp111) <- [:HAS_ROUTE_FROM {SID : "MAB2A"} ] - (wp211)
+
+ 
+merge (wp311: Waypoint { name : "POSUB", uid : "POSUB" })
+merge (wp211) <- [:HAS_ROUTE_FROM {SID : "MAB2A"} ] - (wp311)
+
+ 
+merge (wp411: Waypoint { name : "SANAT", uid : "SANAT" })
+merge (wp311) <- [:HAS_ROUTE_FROM {SID : "MAB2A"} ] - (wp411)
+
+
+
+
+merge (a12:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp012: Waypoint { name : "PAS3", uid : "PAS3" } ) 
+merge (a12) <- [:HAS_ROUTE_FROM {SID : "MAB2B"} ] - (wp012)
+ 
+merge (wp112: Waypoint { name : "PASPU", uid : "PASPU" })
+merge (wp012) <- [:HAS_ROUTE_FROM {SID : "MAB2B"} ] - (wp112)
+
+ 
+merge (wp212: Waypoint { name : "NYLON", uid : "NYLON" })
+merge (wp112) <- [:HAS_ROUTE_FROM {SID : "MAB2B"} ] - (wp212)
+
+
+
+
+merge (a13:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp013: Waypoint { name : "LAV2", uid : "LAV2" } ) 
+merge (a13) <- [:HAS_ROUTE_FROM {SID : "OBD1A"} ] - (wp013)
+ 
+merge (wp113: Waypoint { name : "LAVAX", uid : "LAVAX" })
+merge (wp013) <- [:HAS_ROUTE_FROM {SID : "OBD1A"} ] - (wp113)
+
+ 
+merge (wp213: Waypoint { name : "IGNON", uid : "IGNON" })
+merge (wp113) <- [:HAS_ROUTE_FROM {SID : "OBD1A"} ] - (wp213)
+
+ 
+merge (wp313: Waypoint { name : "SANAT", uid : "SANAT" })
+merge (wp213) <- [:HAS_ROUTE_FROM {SID : "OBD1A"} ] - (wp313)
+
+
+
+
+merge (a14:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp014: Waypoint { name : "LAV2", uid : "LAV2" } ) 
+merge (a14) <- [:HAS_ROUTE_FROM {SID : "OBD1B"} ] - (wp014)
+ 
+merge (wp114: Waypoint { name : "LAVAX", uid : "LAVAX" })
+merge (wp014) <- [:HAS_ROUTE_FROM {SID : "OBD1B"} ] - (wp114)
+
+ 
+merge (wp214: Waypoint { name : "RUVIK", uid : "RUVIK" })
+merge (wp114) <- [:HAS_ROUTE_FROM {SID : "OBD1B"} ] - (wp214)
+
+ 
+merge (wp314: Waypoint { name : "DOVAN", uid : "DOVAN" })
+merge (wp214) <- [:HAS_ROUTE_FROM {SID : "OBD1B"} ] - (wp314)
+
+ 
+merge (wp414: Waypoint { name : "BIPOP", uid : "BIPOP" })
+merge (wp314) <- [:HAS_ROUTE_FROM {SID : "OBD1B"} ] - (wp414)
+
+
+
+
+merge (a15:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp015: Waypoint { name : "REMES", uid : "REMES" } ) 
+merge (a15) <- [:HAS_ROUTE_FROM {SID : "REP1A"} ] - (wp015)
+ 
+merge (wp115: Waypoint { name : "SAMKO", uid : "SAMKO" })
+merge (wp015) <- [:HAS_ROUTE_FROM {SID : "REP1A"} ] - (wp115)
+
+
+
+
+merge (a16:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp016: Waypoint { name : "REMES", uid : "REMES" } ) 
+merge (a16) <- [:HAS_ROUTE_FROM {SID : "REP1B"} ] - (wp016)
+ 
+merge (wp116: Waypoint { name : "BTM", uid : "BTM" })
+merge (wp016) <- [:HAS_ROUTE_FROM {SID : "REP1B"} ] - (wp116)
+
+ 
+merge (wp216: Waypoint { name : "DOVAN", uid : "DOVAN" })
+merge (wp116) <- [:HAS_ROUTE_FROM {SID : "REP1B"} ] - (wp216)
+
+ 
+merge (wp316: Waypoint { name : "BIPOP", uid : "BIPOP" })
+merge (wp216) <- [:HAS_ROUTE_FROM {SID : "REP1B"} ] - (wp316)
+
+
+
+
+merge (a17:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp017: Waypoint { name : "LAV1", uid : "LAV1" } ) 
+merge (a17) <- [:HAS_ROUTE_FROM {SID : "SUR1A"} ] - (wp017)
+ 
+merge (wp117: Waypoint { name : "LAVAX", uid : "LAVAX" })
+merge (wp017) <- [:HAS_ROUTE_FROM {SID : "SUR1A"} ] - (wp117)
+
+ 
+merge (wp217: Waypoint { name : "IGNON", uid : "IGNON" })
+merge (wp117) <- [:HAS_ROUTE_FROM {SID : "SUR1A"} ] - (wp217)
+
+ 
+merge (wp317: Waypoint { name : "SANAT", uid : "SANAT" })
+merge (wp217) <- [:HAS_ROUTE_FROM {SID : "SUR1A"} ] - (wp317)
+
+
+
+
+merge (a18:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp018: Waypoint { name : "LAV1", uid : "LAV1" } ) 
+merge (a18) <- [:HAS_ROUTE_FROM {SID : "SUR1B"} ] - (wp018)
+ 
+merge (wp118: Waypoint { name : "LAVAX", uid : "LAVAX" })
+merge (wp018) <- [:HAS_ROUTE_FROM {SID : "SUR1B"} ] - (wp118)
+
+ 
+merge (wp218: Waypoint { name : "RUVIK", uid : "RUVIK" })
+merge (wp118) <- [:HAS_ROUTE_FROM {SID : "SUR1B"} ] - (wp218)
+
+ 
+merge (wp318: Waypoint { name : "DOVAN", uid : "DOVAN" })
+merge (wp218) <- [:HAS_ROUTE_FROM {SID : "SUR1B"} ] - (wp318)
+
+ 
+merge (wp418: Waypoint { name : "BIPOP", uid : "BIPOP" })
+merge (wp318) <- [:HAS_ROUTE_FROM {SID : "SUR1B"} ] - (wp418)
+
+
+
+
+merge (a19:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp019: Waypoint { name : "PAS2", uid : "PAS2" } ) 
+merge (a19) <- [:HAS_ROUTE_FROM {SID : "ELA1A"} ] - (wp019)
+ 
+merge (wp119: Waypoint { name : "PASPU", uid : "PASPU" })
+merge (wp019) <- [:HAS_ROUTE_FROM {SID : "ELA1A"} ] - (wp119)
+
+ 
+merge (wp219: Waypoint { name : "NYLON", uid : "NYLON" })
+merge (wp119) <- [:HAS_ROUTE_FROM {SID : "ELA1A"} ] - (wp219)
+
+ 
+merge (wp319: Waypoint { name : "POSUB", uid : "POSUB" })
+merge (wp219) <- [:HAS_ROUTE_FROM {SID : "ELA1A"} ] - (wp319)
+
+ 
+merge (wp419: Waypoint { name : "SANAT", uid : "SANAT" })
+merge (wp319) <- [:HAS_ROUTE_FROM {SID : "ELA1A"} ] - (wp419)
+
+
+
+
+merge (a20:Airport { name : "WSSS",  uid : "WSSS",  lat : "1.3591666666666666" })
+
+merge (wp020: Waypoint { name : "PAS2", uid : "PAS2" } ) 
+merge (a20) <- [:HAS_ROUTE_FROM {SID : "ELA1B"} ] - (wp020)
+ 
+merge (wp120: Waypoint { name : "PASPU", uid : "PASPU" })
+merge (wp020) <- [:HAS_ROUTE_FROM {SID : "ELA1B"} ] - (wp120)
+
+ 
+merge (wp220: Waypoint { name : "NYLON", uid : "NYLON" })
+merge (wp120) <- [:HAS_ROUTE_FROM {SID : "ELA1B"} ] - (wp220)
+
+
+
+
