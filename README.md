@@ -39,3 +39,9 @@ docker push loogw/airtechchallenge2021:0.0.1-SNAPSHOT
 docker run -e ATM_API_KEY=$ATM_API_KEY -p 8080:8080 loogw/airtechchallenge2021:0.0.1-SNAPSHOT
 
 Replace $ATM_API_KEY with your API token or set it in the environment variable
+
+## Using Neo4j Graph DB 
+<img width="535" alt="n1" src="https://user-images.githubusercontent.com/6189477/121461867-40176900-c9e2-11eb-8b9b-9661ea1d2739.PNG">
+
+
+
