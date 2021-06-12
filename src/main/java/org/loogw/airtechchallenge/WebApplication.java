@@ -36,12 +36,12 @@ public class WebApplication {
       SpringApplication.run(WebApplication.class, args);
    }
 
-   @RequestMapping(value="/")
+   @RequestMapping(value="/api")
    public String home() {
 	return "<b>List all airport: /airports <br> List SIDS in airport: /sids/airport/{icao} <br> List STARS in airport: /stars/airport/{icao} <BR> List top n SIDS waypoints for airport : /sids/airport/{icao}/topWaypoints/{n} ";
    }
 
-   @RequestMapping(value="/airports")
+   @RequestMapping(value="/api/airports")
    public String getAirports() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
 	HttpHeaders headers = new HttpHeaders();
@@ -58,7 +58,7 @@ public class WebApplication {
 	return response;
    }
 
-   @RequestMapping(value = "/sids/airport/{icao}")
+   @RequestMapping(value = "/api/sids/airport/{icao}")
    public String getSIDsForAirport(@PathVariable("icao") String id) {
       
       HttpHeaders headers = new HttpHeaders();
@@ -68,7 +68,7 @@ public class WebApplication {
       return response; 
    }
 
-   @RequestMapping(value = "/stars/airport/{icao}")
+   @RequestMapping(value = "/api/stars/airport/{icao}")
    public String getSTARSForAirport(@PathVariable("icao") String id){
       HttpHeaders headers = new HttpHeaders();
       headers.set("api-key",apiKey);
@@ -78,13 +78,13 @@ public class WebApplication {
 
    }
 
-   @RequestMapping(value = "/sids/airport/{icao}/topWaypoints/{n}")
+   @RequestMapping(value = "/api/sids/airport/{icao}/topWaypoints/{n}")
    public String getTopNSIDWaypointsForAirport(@PathVariable("icao") String id, @PathVariable("n") int n) {
 	String resp= getSIDsForAirport(id);
 	return generateResults(id,resp,n);
    }
 
-   @RequestMapping(value = "/stars/airport/{icao}/topWaypoints/{n}")
+   @RequestMapping(value = "/api/stars/airport/{icao}/topWaypoints/{n}")
    public String getTopNSTARWaypointsForAirport(@PathVariable("icao") String id, @PathVariable("n") int n) {
  	String resp = getSTARSForAirport(id);
 	return generateResults(id,resp,n);
