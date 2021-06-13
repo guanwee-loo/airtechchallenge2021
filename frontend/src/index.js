@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
@@ -23,7 +23,7 @@ function Airport() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedICAO, setSelectedICAO] = useState("NA");
   const fetchData = async () => {
-    const response = await axios.get(
+  const response = await axios.get(
       '/api/airports'
     );
     setAirports(response.data);
@@ -31,6 +31,7 @@ function Airport() {
   const setModalIsOpenToTrue =(icao)=>{
       setModalIsOpen (true)
       setSelectedICAO(icao)
+	
   };
 
   const setModalIsOpenToFalse =()=>{
@@ -85,14 +86,44 @@ function Airport() {
 }
 
 function Top2WayPoints (props) {
-        return (
-            <>
-            <ul>
-                 <h1>{props.icao}</h1>
-            </ul>
-            </>
-        )
+ const [Top2SIDWayPoints, setTop2SIDWayPoints] = useState(null);
+ const [Top2STARWayPoints, setTop2STARWayPoints] = useState(null);
+ //const fetchTopWayPoints = async (icao) => {
+ //const response1 = await axios.get(
+ //    '/api/sids/airport/' + icao + '/topWaypoints/2'
+ //   );
+ //   setTop2SIDWayPoints(response1.data);
+// const response2 = await axios.get(
+//     '/api/stars/airport/' + icao + '/topWaypoints/2'
+ //   );
+ //   setTop2STARWayPoints(response2.data);
+// };
 
+ useEffect(() => {
+        const resp=axios.get('api/sids/airport/' + props.icao + '/topWaypoints/2');
+        setTop2SIDWayPoints(resp.data);
+	const resp1=axios.get('api/stars/airport/' + props.icao + '/topWaypoints/2');
+	setTop2STARWayPoints(resp1.data);
+  });
+    return (
+	<h2>{props.icao}</h2>
+   )
+   
+   /*   <div className="airports">
+        {Top2SIDWayPoints &&
+          Top2SIDWayPoints.map((wp, index) => {
+
+            return (
+              <>
+              <div className="airport" key={index}>
+                <h3>Waypoint {index + 1}</h3>
+                <h2>{wp.name}</h2>
+              </div>
+              </>
+            );
+          })}
+      </div>
+*/
 }
 
 export default Top2WayPoints
