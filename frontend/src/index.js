@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import ScotchInfoBar from './AIRInfoBar';
+import AIRInfoBar from './AIRInfoBar';
 import './styles.css';
 
 function Airport() {
@@ -9,9 +9,8 @@ function Airport() {
 
   const fetchData = async () => {
     const response = await axios.get(
-      'http://localhost:3000/api/airports'
+      '/api/airports'
     );
-
     setAirports(response.data);
   };
 
@@ -38,17 +37,19 @@ function Airport() {
                 <h2>{airport.name}</h2>
 
                 <div className="details">
-                  <p>UID  : {airport.uid}</p>
-                  <p>ICAO : {airport.icao}</p>
-                  <p>LAT  : {airport.lat}</p>
-		  <p>LNG: {airport.lng}</p>
+                  <p>UID : {airport.uid}</p>
+                  <p>ICAO : <a title="Click for top 2 SID and STAR waypoints" href="" onClick={fetchData}>{airport.icao}</a> </p>
+		  <p>ALT : {airport.alt}</p>
+                  <p>LAT : {airport.lat}</p>
+		  <p>LNG : {airport.lng}</p>
+		  <p>IATA : {airport.iata} </p>
                 </div>
               </div>
             );
           })}
       </div>
 
-      <ScotchInfoBar year="2021" />
+      <AIRInfoBar year="2021" />
     </div>
   );
 }
