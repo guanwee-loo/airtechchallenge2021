@@ -29,19 +29,26 @@ HTTP GET http://localhost:8080/api/stars/airport/{icao}/topWaypoints/{N}
 <img width="511" alt="topwp_stars" src="https://user-images.githubusercontent.com/6189477/121049504-52c74d80-c7ea-11eb-810a-d6a03ce9b1aa.PNG">
 
 ## Building the Docker image and pushing to Docker Hub
-docker build -t loogw/airtechchallenge2021:0.0.1-SNAPSHOT .
+docker build -t loogw/airtechchallenge2021:0.0.5-SNAPSHOT .
 
-docker push loogw/airtechchallenge2021:0.0.1-SNAPSHOT
+docker push loogw/airtechchallenge2021:0.0.5-SNAPSHOT
 <img width="960" alt="h" src="https://user-images.githubusercontent.com/6189477/121223470-24b13e80-c8ba-11eb-9a4c-840ba04134fc.PNG">
 
 
 ## Running the container
-docker run -e ATM_API_KEY=$ATM_API_KEY -p 8080:8080 loogw/airtechchallenge2021:0.0.1-SNAPSHOT
+docker run -e ATM_API_KEY=$ATM_API_KEY -p 8080:8080 loogw/airtechchallenge2021:0.0.5-SNAPSHOT
 
 Replace $ATM_API_KEY with your API token or set it in the environment variable
+Snapshot 0.0.5 includes the Web UI.
 
 ## Web Interface
 The Web UI is based on React.js located in the *frontend* folder
+
+# Display list of airports
+<img width="960" alt="u1" src="https://user-images.githubusercontent.com/6189477/121846814-33647f00-cd1a-11eb-83bd-17a9679ac90c.PNG">
+
+# Display top 2 SID and STAR waypoints for airport with ICAO
+<img width="960" alt="u2" src="https://user-images.githubusercontent.com/6189477/121846822-352e4280-cd1a-11eb-9bd8-8a30908f1e0f.PNG">
 
 
 ## Using Neo4j Graph DB 
