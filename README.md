@@ -50,6 +50,14 @@ The Web UI is based on React.js located in the *frontend* folder
 ### Display top 2 SID and STAR waypoints for airport with ICAO
 <img width="960" alt="u2" src="https://user-images.githubusercontent.com/6189477/121846822-352e4280-cd1a-11eb-9bd8-8a30908f1e0f.PNG">
 
+## Deployment
+### GitHub Action - on push with tag v1.*.*
+Build and deploy to Docker Hub
+User has to docker pull and run locally
+
+### GitHub Action - on push with tag v2.*.*
+Build and deploy to ECS Registry and then deploy to ECS
+
 
 ## Using Neo4j Graph DB 
 
