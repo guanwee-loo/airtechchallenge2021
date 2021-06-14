@@ -100,14 +100,22 @@ function Top2WayPoints (props) {
 
  useEffect(() => {
 	fetchTopWayPoints(props.icao);
- },[props.icao]);
+ },[props.icao]); //this last param is required to avoid calling the API multiple times!
+
 
   return (
+      <>
       <table>
-      <th>Top 2 Waypoints for {props.icao}</th>
+      <th>Top 2 SID Waypoints for {props.icao}</th>
         {Top2SIDWayPoints &&
-	Top2SIDWayPoints.map(wp => <tr><td>{wp.name}</td><td>{wp.count}</td></tr>)}
+	Top2SIDWayPoints.map((wp,index) => <tr><td>{index+1}</td><td>{wp.name}</td><td>{wp.count}</td></tr>)}
       </table>
+      <table>
+      <th>Top 2 STAR Waypoints for {props.icao}</th>
+        {Top2STARWayPoints &&
+        Top2STARWayPoints.map((wp,index) => <tr><td>{index+1}</td><td>{wp.name}</td><td>{wp.count}</td></tr>)}
+      </table>
+      </>
   );
 
    
