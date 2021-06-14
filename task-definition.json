@@ -34,7 +34,7 @@
       "secrets": [{
       	"name": "ATM_API_KEY",
       	"valueFrom": "arn:aws:secretsmanager:ap-southeast-1:931616079788:secret:air_atm_api_key-MWcsv0"
-       }]
+       }],
       "dockerSecurityOptions": null,
       "memory": null,
       "memoryReservation": 1024,
