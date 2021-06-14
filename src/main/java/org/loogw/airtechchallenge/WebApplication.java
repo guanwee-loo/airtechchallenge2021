@@ -34,7 +34,6 @@ public class WebApplication {
 
    public static void main(String[] args) {
       SpringApplication.run(WebApplication.class, args);
-      System.out.println(apiKey);
    }
 
    @RequestMapping(value="/api")
@@ -44,6 +43,7 @@ public class WebApplication {
 
    @RequestMapping(value="/api/airports")
    public String getAirports() throws Exception {
+        System.out.println(apiKey);
         ObjectMapper objectMapper = new ObjectMapper();
 	HttpHeaders headers = new HttpHeaders();
 	headers.set("api-key",apiKey);
