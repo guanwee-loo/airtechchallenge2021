@@ -43,7 +43,7 @@ public class WebApplication {
 
    @RequestMapping(value="/api/airports")
    public String getAirports() throws Exception {
-        System.out.println(apiKey);
+        //System.out.println(apiKey);
         ObjectMapper objectMapper = new ObjectMapper();
 	HttpHeaders headers = new HttpHeaders();
 	headers.set("api-key",apiKey);
