@@ -44,10 +44,10 @@ Snapshot 0.0.5 includes the Web UI.
 ## Web Interface
 The Web UI is based on React.js located in the *frontend* folder
 
-# Display list of airports
+### Display list of airports
 <img width="960" alt="u1" src="https://user-images.githubusercontent.com/6189477/121846814-33647f00-cd1a-11eb-83bd-17a9679ac90c.PNG">
 
-# Display top 2 SID and STAR waypoints for airport with ICAO
+### Display top 2 SID and STAR waypoints for airport with ICAO
 <img width="960" alt="u2" src="https://user-images.githubusercontent.com/6189477/121846822-352e4280-cd1a-11eb-9bd8-8a30908f1e0f.PNG">
 
 
