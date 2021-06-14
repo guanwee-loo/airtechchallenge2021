@@ -25,8 +25,8 @@
 
 on:
   push:
-    branches:
-      - with-ui
+    tags:
+      - "v2.*.*"
 
 name: Deploy to Amazon ECS
 
@@ -55,7 +55,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: my-ecr-repo
+        ECR_REPOSITORY: airtechchallenge2021
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
@@ -69,13 +69,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: sample-app
+        container-name: airtechchallenge2021-app
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: sample-app-service
+        service: airtechchallenge2021-app-service
         cluster: default
         wait-for-service-stability: true
