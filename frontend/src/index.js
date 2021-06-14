@@ -50,7 +50,10 @@ function Airport() {
         </button>
         <br />
       </div>
-
+              <Modal isOpen={modalIsOpen} style={customStyles}>
+                <button onClick={setModalIsOpenToFalse}>x</button>
+                <Top2WayPoints icao={selectedICAO} />
+              </Modal>
       {/* Display data from API */}
       <div className="airports">
         {airports &&
@@ -58,10 +61,6 @@ function Airport() {
 
             return (
               <>
-              <Modal isOpen={modalIsOpen} style={customStyles}>
-                <button onClick={setModalIsOpenToFalse}>x</button>
-                <Top2WayPoints icao={selectedICAO} />
-              </Modal>
               <div className="airport" key={index}>
                 <h3>Airport {index + 1}</h3>
 	<h2>{airport.name}</h2>
@@ -84,46 +83,34 @@ function Airport() {
     </div>
   );
 }
-
 function Top2WayPoints (props) {
- const [Top2SIDWayPoints, setTop2SIDWayPoints] = useState(null);
+ const [Top2SIDWayPoints, setTop2SIDWayPoints] = useState(null) ;
  const [Top2STARWayPoints, setTop2STARWayPoints] = useState(null);
- //const fetchTopWayPoints = async (icao) => {
- //const response1 = await axios.get(
- //    '/api/sids/airport/' + icao + '/topWaypoints/2'
- //   );
- //   setTop2SIDWayPoints(response1.data);
-// const response2 = await axios.get(
-//     '/api/stars/airport/' + icao + '/topWaypoints/2'
- //   );
- //   setTop2STARWayPoints(response2.data);
-// };
+ const fetchTopWayPoints = async  (icao) => {
+    const response1 = await axios.get(
+     '/api/sids/airport/' + icao + '/topWaypoints/2'
+    );
+    setTop2SIDWayPoints(response1.data.topWayPoints);
+    const response2 = await axios.get(
+     '/api/stars/airport/' + icao + '/topWaypoints/2'
+    );
+    setTop2STARWayPoints(response2.data.topWayPoints);
+ };
+
 
  useEffect(() => {
-        const resp=axios.get('api/sids/airport/' + props.icao + '/topWaypoints/2');
-        setTop2SIDWayPoints(resp.data);
-	const resp1=axios.get('api/stars/airport/' + props.icao + '/topWaypoints/2');
-	setTop2STARWayPoints(resp1.data);
-  });
-    return (
-	<h2>{props.icao}</h2>
-   )
-   
-   /*   <div className="airports">
-        {Top2SIDWayPoints &&
-          Top2SIDWayPoints.map((wp, index) => {
+	fetchTopWayPoints(props.icao);
+ },[props.icao]);
 
-            return (
-              <>
-              <div className="airport" key={index}>
-                <h3>Waypoint {index + 1}</h3>
-                <h2>{wp.name}</h2>
-              </div>
-              </>
-            );
-          })}
-      </div>
-*/
+  return (
+      <table>
+      <th>Top 2 Waypoints for {props.icao}</th>
+        {Top2SIDWayPoints &&
+	Top2SIDWayPoints.map(wp => <tr><td>{wp.name}</td><td>{wp.count}</td></tr>)}
+      </table>
+  );
+
+   
 }
 
 export default Top2WayPoints
