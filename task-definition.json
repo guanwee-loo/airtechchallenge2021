@@ -33,7 +33,7 @@
       "workingDirectory": null,
       "secrets": [{
       	"name": "ATM_API_KEY",
-      	"valueFrom": "arn:aws:secretsmanager:ap-southeast-1:931616079788:secret:ATM_API_KEY-J63VgV"
+      	"valueFrom": "arn:aws:secretsmanager:ap-southeast-1:931616079788:secret:ATM_API_KEY1-Ho8d8t"
        }],
       "dockerSecurityOptions": null,
       "memory": null,
