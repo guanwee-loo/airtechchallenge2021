@@ -68,4 +68,8 @@ Getting the Top N results is simply executing a Cypher query:
 <img width="535" alt="n1" src="https://user-images.githubusercontent.com/6189477/121461867-40176900-c9e2-11eb-8b9b-9661ea1d2739.PNG">
 
 
+Show the routes out of DOGRA
+
+<img width="956" alt="d" src="https://user-images.githubusercontent.com/6189477/122199148-6189c080-cecc-11eb-91a3-b0575b43a0dc.PNG">
+
 
